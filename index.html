@@ -4,35 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>약관 생성기</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>약관 & 개인정보처리방침 생성기</h1>
-        
-        <!-- 입력 폼 -->
-        <form id="inputForm">
-            <label>이름: <input type="text" id="name" placeholder="홍길동"></label><br>
-            <label>회사명: <input type="text" id="company" placeholder="길동 주식회사"></label><br>
-            <label>전화번호: <input type="text" id="phone" placeholder="010-1234-5678"></label><br>
-            <button type="submit">생성하기</button>
-        </form>
-
-        <!-- 결과 출력 -->
-        <div id="output">
-            <h2>생성된 약관</h2>
-            <div id="termsResult"></div>
-            <button id="copyTerms">복사</button>
-
-            <h2>생성된 개인정보처리방침</h2>
-            <div id="privacyResult"></div>
-            <button id="copyPrivacy">복사</button>
+        <h1>약관 생성기</h1>
+        <div class="form-section">
+            <h2>정보 입력</h2>
+            <label>이름: <input type="text" id="name" placeholder="홍길동"></label>
+            <label>회사명: <input type="text" id="company" placeholder="주식회사 예시"></label>
+            <label>전화번호: <input type="text" id="phone" placeholder="010-1234-5678"></label>
+            <button onclick="generateDocs()">문서 생성</button>
         </div>
-
-        <!-- AdSense 광고 영역 -->
-        <div class="ads">
-            <!-- 여기에 AdSense 코드 삽입 -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXX" data-ad-format="auto"></ins>
+        <div class="output-section">
+            <h2>생성된 문서</h2>
+            <div id="terms-output"></div>
+            <button onclick="copyText('terms-output')">복사</button>
+            <div id="privacy-output"></div>
+            <button onclick="copyText('privacy-output')">복사</button>
+        </div>
+        <div class="ads-section">
+            <!-- 애드센스 코드 삽입 위치 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-여기에-너의-애드센스-ID"
+                 data-ad-slot="슬롯-번호"
+                 data-ad-format="auto"></ins>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
     </div>
